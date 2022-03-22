@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
-    <script src="script2.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
    <div class="header">Choose your weapon!</div> 
@@ -17,7 +17,11 @@
    <div class="scorebox">
         <div class="computer">Computer choice: <span id="cChoice"></span></div>
         <div class="player">Player choice: <span id="pChoice"></span></div>
-        <div class="score">Score: <span id="score"></span></div>
+        <div class="score">
+            <div id="message"> </div>
+            <div id="score">Computer: 0 Player: 0</div>
+            <div id="endGame"></div>
+        </div>
    </div>
 </body>
 </html>
