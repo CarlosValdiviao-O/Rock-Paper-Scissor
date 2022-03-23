@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+    background-color: blue;
+    font-size: 32px;
+}
+
+button {
+    color: black;
+    font-size: 32px;  
+}
+
+.header {
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.container >* {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+img{
+    max-height: 160px;
+    max-width: 160px;
+    flex: 1;
+} 
+
+.scorebox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.choices {
+    display: flex;
+    align-items: space-around;
+    gap: 20px;
+    flex-direction: row-reverse;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#cChoice, #pChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -11,7 +11,8 @@ let computerScore = 0;
 let playerScore = 0;
 
 function updatePick() {
-    document.getElementById("pChoice").textContent = this.textContent;
+    let imageName = this.textContent.substr(0,1).toLowerCase() + this.textContent.substr(1);
+    document.getElementById("pChoice").innerHTML=`Player choice: <img src="files/${imageName}.png">` ;
     playRound(computerPlay(), this.textContent);
 }
 
@@ -57,17 +58,19 @@ function playRound (computerSelection, playerSelection) {
     }
 
     document.getElementById('message').textContent = message;
-    document.getElementById('score').textContent = `Computer: ${computerScore} Player: ${playerScore}`;
+    document.getElementById('score').textContent = `Player: ${playerScore} Computer: ${computerScore}`;
 
     if (computerScore>4){
         document.getElementById('endGame').innerHTML = 'Game Finished! The computer has won five matches <button id="end">Try Again?</button>';
         const end = document.getElementById('end');
         end.addEventListener("click", newGame);
+        window.scrollTo(0, document.body.scrollHeight);
     }
     else if (playerScore>4){
         document.getElementById('endGame').innerHTML = 'Game Finished! You have beaten the computer! <button id="end">Try Again?</button>';
         const end = document.getElementById('end');
         end.addEventListener("click", newGame);
+        window.scrollTo(0, document.body.scrollHeight);
     }
 }
 
@@ -75,9 +78,10 @@ function newGame(){
     document.getElementById('endGame').innerHTML = '';
     computerScore=0;
     playerScore=0;
-    document.getElementById('score').textContent = `Computer: ${computerScore} Player: ${playerScore}`;
-    document.getElementById("cChoice").textContent = '';
-    document.getElementById("pChoice").textContent = '';
+    document.getElementById('score').textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    document.getElementById("cChoice").textContent = 'Computer choice: ';
+    document.getElementById("pChoice").textContent = 'Player choice: ';
+    document.getElementById('message').textContent = '';
 }
 
 function computerPlay() {
@@ -89,15 +93,15 @@ function computerPlay() {
     }
     if (number%3==0) {
         choice='Rock';
-        document.getElementById("cChoice").textContent = 'Rock';
+        document.getElementById("cChoice").innerHTML = 'Computer choice: <img src="files/rock.png">';
     }
     else if (number%3==1){
         choice='Paper';
-        document.getElementById("cChoice").textContent = 'Paper';
+        document.getElementById("cChoice").innerHTML = 'Computer choice: <img src="files/paper.png">';
     }
     else {
         choice="Scissors";
-        document.getElementById("cChoice").textContent = 'Scissors';
+        document.getElementById("cChoice").innerHTML = 'Computer choice: <img src="files/scissors.png">';
     } 
     return choice;
 }
