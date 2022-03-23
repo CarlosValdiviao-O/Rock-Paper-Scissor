@@ -64,14 +64,13 @@ function playRound (computerSelection, playerSelection) {
         document.getElementById('endGame').innerHTML = 'Game Finished! The computer has won five matches <button id="end">Try Again?</button>';
         const end = document.getElementById('end');
         end.addEventListener("click", newGame);
-        window.scrollTo(0, document.body.scrollHeight);
     }
     else if (playerScore>4){
         document.getElementById('endGame').innerHTML = 'Game Finished! You have beaten the computer! <button id="end">Try Again?</button>';
         const end = document.getElementById('end');
         end.addEventListener("click", newGame);
-        window.scrollTo(0, document.body.scrollHeight);
     }
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 function newGame(){
